@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+
+  <head>
+   	<link href="../css/bootstrap.min.css" rel="stylesheet">
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lumino - Login</title>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/datepicker3.css" rel="stylesheet">
+	<link href="../css/styles.css" rel="stylesheet">
+   	<script type="text/javascript" src="https://code.angularjs.org/1.5.1/angular.min.js"></script>
+
+    <script type="text/javascript" src="../js/script.js"></script>
+  </head>
+
+  <body ng-app="Example" ng-controller='mycontroller'>
+<div class="row">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+			<div class="login-panel panel panel-default">
+				<div class="panel-heading">Signup</div>
+				<div class="panel-body">
+						<form name="newPasswordForm" role="form" ng-submit="newPasswordForm.$valid && ok()" >
+						<fieldset>
+							<div class="form-group">
+									<input ng-required="true" name= 'user' ng-model='username' type="text" class="form-control " placeholder="Create Username">
+							</div>
+							<div class="form-group">
+								<input   type="password" name="newPassword" ng-model="password.new"
+               ng-minlength="6" required class="form-control" placeholder="Create Password" value="">
+							</div>
+							<span class="help-block"
+              ng-show="newPasswordForm.newPassword.$dirty && newPasswordForm.newPassword.$invalid">
+          Min: 6 characters.
+        </span>
+							<div class="form-group">
+								<input type="password" name="newPasswordConfirm"
+               ng-model="password.confirm" ng-minlength="6"
+               value-matches="password.new" required class="form-control" placeholder="Confirm Password" value="">
+							</div>
+							<span class="help-block"
+              ng-show="newPasswordForm.newPasswordConfirm.$dirty && newPasswordForm.newPasswordConfirm.$invalid">
+Passwords do not match        </span>
+							<label> 
+							<button  style="margin-top: 2%" class="btn btn-md btn-info" ng-click="newPasswordForm.user.$valid && newPasswordForm.newPassword.$valid && newPasswordForm.newPasswordConfirm.$valid && register()">Register</button></fieldset>
+      
+      
+    
+
+					</form>
+				</div>
+			</div>
+		</div><!-- /.col-->
+	</div><!-- /.row -->	
+	
+
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+      </body>
+</html>
